@@ -1,0 +1,199 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #000;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/*Button*/
+.box {
+  text-align: center;
+  margin-top: 20%;
+  position: relative;
+}
+
+.box button {
+  color: rgb(0, 0, 0);
+  border: 2px solid rgb(0, 195, 255);
+  border-radius: 7px;
+  padding: 10px 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  background: rgb(0, 195, 255);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.box button:hover {
+  background: transparent;
+  color: white;
+  border-color: white;
+  box-shadow: 0 0 15px rgb(0, 194, 253);
+}
+
+/* Diamond Shape Stars */
+.stars {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px white;
+  opacity: 1;
+  transition: transform 0.5s ease-out, opacity 0.5s ease-in-out;
+}
+
+.stars.large {
+  width: 10px;
+  height: 10px;
+}
+
+/*Heart*/
+.heart {
+  position: relative;
+  width: 200px;  /* Increased from 100px */
+  height: 180px;  /* Increased from 90px */
+  animation: heartbeat 1.5s ease infinite;
+  filter: drop-shadow(0 0 25px #ff69b4);
+}
+
+.heart:before, .heart:after {
+  position: absolute;
+  content: "";
+  left: 100px;  /* Adjusted for larger size */
+  top: 0;
+  width: 100px;  /* Increased from 50px */
+  height: 160px; /* Increased from 80px */
+  background: #ff69b4;
+  border-radius: 100px 100px 0 0; /* Adjusted radius */
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+  box-shadow: 0 0 40px #ff69b4; /* Increased glow */
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.sparkle {
+  position: absolute;
+  background-color: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: sparkle 1s ease-out forwards;
+  opacity: 0;
+  filter: blur(1px); /* Added soft blur */
+}
+
+@keyframes sparkle {
+  0% {
+      transform: scale(0) translate(0, 0);
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      transform: scale(2) translate(var(--tx, 0), var(--ty, 0));
+      opacity: 0;
+  }
+}
+
+.inner-glow {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,105,180,0.4) 0%, rgba(255,105,180,0) 70%);
+  animation: pulse 2s infinite alternate;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  from { opacity: 0.3; }
+  to { opacity: 0.7; }
+}
+/*Extra*/
+.container {
+  position: relative;
+}
+
+/* Heart style */
+.heart-container {
+  position: relative;
+  display: inline-block;
+  margin-top: 20%;
+}
+
+.marry-me-text {
+  position: absolute;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff69b4;
+  pointer-events: none;
+  white-space: nowrap;
+  /*animation: floatText 4s linear forwards;*/
+
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  text-shadow: 0 0 10px #8712c6, 0 0 20px #30ea0b;
+  opacity: 0;
+  pointer-events: none;
+  animation: floatText 3s ease-in-out forwards;
+}
+
+@keyframes floatText {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -150%) scale(1.2);
+  }
+}
+
+.glow-response {
+  color: black;
+  border: 2px solid rgb(0, 195, 255);
+  border-radius: 7px;
+  padding: 10px 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  background: rgb(0, 195, 255);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  margin: 0 10px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+}
+
+.glow-response:hover {
+  background: transparent;
+  color: white;
+  border-color: white;
+  box-shadow: 0 0 15px rgb(0, 194, 253);
+}
