@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Responsive Video Slider</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="slider">
+    <button id="prev">&lt;</button>
+
+    <!-- Slides -->
+    <div class="item"><video class="slide-video" src="Videos/01.mp4" muted loop></video></div>
+    <div class="item"><video class="slide-video" src="Videos/02.mp4" muted loop></video></div>
+    <div class="item"><video class="slide-video" src="Videos/03.mp4" muted loop></video></div>
+    <div class="item"><video class="slide-video" src="Videos/04.mp4" muted loop></video></div>
+    <div class="item"><video class="slide-video" src="Videos/05.mp4" muted loop></video></div>
+    <div class="item"><video class="slide-video" src="Videos/06.mp4" muted loop></video></div>
+    <div class="item"><video class="slide-video" src="Videos/07.mp4" muted loop></video></div>
+
+    <button id="next">&gt;</button>
+  </div>
+
+  <!-- Modal for fullscreen video -->
+  <div id="videoModal" class="video-modal">
+    <span class="close">&times;</span>
+    <video id="modalVideo" controls autoplay></video>
+  </div>
+
+   <!-- Audio element for background music -->
+   <audio id="backgroundAudio" src="audio/audio2.mp3" loop autoplay></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
